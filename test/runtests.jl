@@ -1,7 +1,7 @@
 using SuffixArrays
 using Test
 
-readstring(s) = read(s, String) 
+readstring(s) = read(s, String)
 
 function test_suffix(args)
     for file in args

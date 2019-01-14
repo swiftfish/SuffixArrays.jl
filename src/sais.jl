@@ -29,6 +29,7 @@ mutable struct IntArray
     a::Array{Int,1}
     pos::Int
 end
+
 import Base: getindex, setindex!
 getindex(a::IntArray,key) = a.a[a.pos + Int(key)]
 setindex!(a::IntArray,value,key) = a.a[a.pos + Int(key)] = value
@@ -384,7 +385,7 @@ function computeBWT(T,SA,C,B,n,k)
     b = B[Int(c1)+1]
     SA[b+1] = 0 < j && T[j] < c1 ? ~j : j
     b += 1
-    for i = 1:n   
+    for i = 1:n
         if 0 < (j = SA[i])
             j -= 1
             c0 = T[j+1]

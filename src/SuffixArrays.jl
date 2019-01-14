@@ -10,8 +10,8 @@ end
 
 function SuffixArray(s::S) where S <: AbstractString
     n = length(s)
-    index = zeros(n <= typemax(Int8)  ? Int8  : 
-                  n <= typemax(Int16) ? Int16 : 
+    index = zeros(n <= typemax(Int8)  ? Int8  :
+                  n <= typemax(Int16) ? Int16 :
                   n <= typemax(Int32) ? Int32 : Int64, n)
     return SuffixArray(s,n,index)
 end
